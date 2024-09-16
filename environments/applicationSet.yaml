@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/DanielYevelkin/argocd-fuckery.git
         revision: HEAD
         directories:
-          - path: /*
+          - path: environments/*
   template:
     metadata:
       name: '{{path.basename}}-app'
