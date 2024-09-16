@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: 2048-generator
-  namespace: argocd
+  namespace: default
 spec:
   generators:
     - git:
         repoURL: https://github.com/DanielYevelkin/argocd-fuckery.git
         revision: HEAD
         directories:
-          - path: "envs/*"
+          - path: "applications/*"
   template:
     metadata:
       name: '{{path.basename}}-app'
