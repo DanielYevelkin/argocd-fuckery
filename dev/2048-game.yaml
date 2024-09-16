@@ -36,7 +36,7 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
-      tagetPort: 80
+      nodePort: 80
   type: NodePort
   selector:
     app.kubernetes.io/name: app-2048
