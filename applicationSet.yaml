@@ -17,7 +17,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/DanielYevelkin/argocd-fuckery.git
-        path: '{{.path.path}}'
+        path: '{{.path}}'
         targetRevision: HEAD
       destination:
         server: https://kubernetes.default.svc
