@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: 2048-generator
-  namespace: appsets
+  namespace: argocd
 spec:
   generators:
     - git:
