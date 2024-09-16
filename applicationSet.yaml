@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: 2048-generator
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/DanielYevelkin/argocd-fuckery.git
+        revision: HEAD
+        directories:
+          - path: /*
+  template:
+    metadata:
+      name: '{{path.basename}}-app'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/DanielYevelkin/argocd-fuckery.git
+        path: '{{.path.path}}'
+        targetRevision: HEAD
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
